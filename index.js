@@ -8,10 +8,10 @@ app.use(express.json())
 app.use(cors())
 
 const db = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    password: 'password',
-    database: 'taxableincome'
+    user: 'b9e1be04dd0dc8',
+    host: 'us-cdbr-east-04.cleardb.com',
+    password: 'c045a89f',
+    database: 'heroku_a38e0f32cb7ac05'
 })
 
 
@@ -49,5 +49,5 @@ app.get("/read/", (req,res) => {
 
 
 app.listen(process.env.PORT || 3001, () => {
-    console.log("Server running on port 3005")
+    console.log("Server running on port 3001")
 })
