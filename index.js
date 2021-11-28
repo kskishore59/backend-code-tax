@@ -25,7 +25,7 @@ app.post('/details', (req, res) => {
     const rent = req.body.rent
     const city = req.body.city
 
-    db.query('INSERT INTO taxable (basic, lta, hra, food, inv80C, medi, citytype, rent) VALUES (?,?,?,?,?,?,?,?)', [basic, lta, hra, food, inv80C, medi, city, rent],
+    db.query('INSERT INTO tax-calculator (basic, lta, hra, food, inv80C, medi, citytype, rent) VALUES (?,?,?,?,?,?,?,?)', [basic, lta, hra, food, inv80C, medi, city, rent],
         (err, result) => {
             if(err){
                 console.log(err)
@@ -37,7 +37,7 @@ app.post('/details', (req, res) => {
 });
 
 app.get("/read/", (req,res) => {
-    db.query('SELECT * FROM taxable', (err,result) => {
+    db.query('SELECT * FROM tax-calculator', (err,result) => {
         if(err){
             console.log(err)
         } else{
