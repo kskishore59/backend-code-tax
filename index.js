@@ -36,8 +36,18 @@ app.post('/details', (req, res) => {
     )
 });
 
-const port = process.env.PORT || 3005 ;
+app.get("read", (req,res) => {
+    db.query('SELECT * FROM taxable', (err,result) => {
+        if(err){
+            console.log(err)
+        } else{
+            res.send(result)
+        }
+    })
+})
 
-app.listen(port, () => {
+
+
+app.listen(process.env.PORT || 3001, () => {
     console.log("Server running on port 3005")
 })
