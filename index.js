@@ -36,7 +36,7 @@ app.post('/details', (req, res) => {
     )
 });
 
-app.get("read", (req,res) => {
+app.get("/read/", (req,res) => {
     db.query('SELECT * FROM taxable', (err,result) => {
         if(err){
             console.log(err)
